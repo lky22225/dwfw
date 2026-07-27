@@ -8,6 +8,7 @@ dist/
 frontend/build/
 frontend/dist/
 backend/target/
+backend/backend/
 *.class
 *.jar
 *.war
