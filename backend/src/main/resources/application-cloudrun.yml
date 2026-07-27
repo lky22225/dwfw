@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: dwfw-backend
+  
+  # 데이터베이스 자동 설정 비활성화
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  
+  # JSON 파일 저장 경로 설정 (Cloud Run은 임시 파일 시스템)
+  json:
+    data-path: ${SPRING_JSON_DATA_PATH:/tmp/data}
+  
+  # CORS 설정은 SecurityConfig에서 관리 (application.yml의 설정은 무시됨)
+
+# JWT 설정
+jwt:
+  secret: ${JWT_SECRET:dwfw-secret-key-2024-change-in-production}
+  expiration: 86400000 # 24시간 (밀리초)
+
+# 로깅 설정
+logging:
+  level:
+    com.dwfw: INFO
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+

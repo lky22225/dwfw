@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: dwfw-backend
+  
+  # 데이터베이스 자동 설정 비활성화
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  
+  # JSON 파일 저장 경로 설정
+  json:
+    data-path: ./data/
+  
+  # CORS 설정
+  web:
+    cors:
+      allowed-origins: "http://localhost:3000"
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "*"
+      allow-credentials: true
+
+# JWT 설정
+jwt:
+  secret: dwfw-secret-key-2024
+  expiration: 86400000 # 24시간 (밀리초)
+
+# MyBatis 설정 제거 (JSON 파일 기반 사용)
+
+# 로깅 설정
+logging:
+  level:
+    com.dwfw: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+

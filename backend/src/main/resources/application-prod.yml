@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: dwfw-backend
+  
+  # 데이터베이스 자동 설정 비활성화
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  
+  # JSON 파일 저장 경로 설정 (프로덕션)
+  json:
+    data-path: /home/ec2-user/dwfw-data/
+  
+  # CORS 설정 (프로덕션 도메인으로 변경 필요)
+  web:
+    cors:
+      allowed-origins: "https://your-cloudfront-domain.cloudfront.net"
+      allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+      allowed-headers: "*"
+      allow-credentials: true
+
+# JWT 설정
+jwt:
+  secret: ${JWT_SECRET:dwfw-secret-key-2024-change-in-production}
+  expiration: 86400000 # 24시간 (밀리초)
+
+# 로깅 설정
+logging:
+  level:
+    com.dwfw: INFO
+    org.springframework.security: WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: /var/log/dwfw-backend.log
+

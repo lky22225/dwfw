@@ -1,3 +1,59 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+build/
+dist/
+frontend/build/
+frontend/dist/
+backend/target/
+*.class
+*.jar
+*.war
+
+# Archives
+*.zip
+demo*.zip
+
+# Cache files
+.cache/
+frontend/.cache/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+tmp/
+temp/
+
+apache-maven-3.9.6/
+jdk-17.0.2/
+node-v18.19.0-win-x64.zip
+frontend/apache-maven-3.9.6-bin.zip
+frontend/jdk-17.0.2-windows-x64-bin.zip
+frontend/node-v18.19.0-win-x64.zip
+frontend/nvm-setup.exe
+frontend/openjdk-17.0.2_windows-x64_bin.zip
+frontend/node-v18.19.0-x64.msi
 
 # YoYo AI version control directory
 .yoyo/

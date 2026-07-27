@@ -1,0 +1,12 @@
+[ {
+  "id" : 118,
+  "username" : "ADMIN",
+  "password" : "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+  "name" : "시스템관리자",
+  "email" : "admin@dwfw.com",
+  "role" : "SYSTEM_ADMIN",
+  "companyName" : "DwFw System",
+  "active" : true,
+  "createdAt" : [ 2026, 7, 27, 11, 4, 36, 1051900 ],
+  "updatedAt" : [ 2026, 7, 27, 11, 4, 36, 1051900 ]
+} ]
